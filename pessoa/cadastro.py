@@ -5,16 +5,12 @@ def cadastro_pessoa():
     sobrenome = input('Sobrenome: ')
     email = input('E-mail: ')
     telefone = input('Telefone: ')
-
-    # Endereço
     cidade = input('Cidade: ')
     bairro = input('Bairro: ')
     rua = input('Rua: ')
     n_casa = input('N/CASA: ')
 
-
-    # Dicionário
-
+# Dicionário
     pessoa = {
         'nome': nome,
         'sobrenome' : sobrenome,

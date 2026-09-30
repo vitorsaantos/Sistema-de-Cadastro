@@ -1,9 +1,11 @@
 from pessoa.cadastro import cadastro_pessoa
-from pessoa.lista import lista_usuarios, lista_pessoas, selecionar_usuario
+import pessoa.lista
 
 print('===== SISTEMA DE CADASTRO =====  ')
 print(' 1 - Cadastrar pessoa \n 2 - Listar pessoas \n 3 - Sair')
 
+usuarios = pessoa.lista.carregar_usuarios()
+pessoa.lista.lista_pessoas = usuarios
 
 while True:
     entrada_sistema = int(input('Digite o número desejado: '))
@@ -11,20 +13,20 @@ while True:
     if entrada_sistema == 1:
         print('Você acessou o casdastro de pessoa')
         usuario = cadastro_pessoa()
-        lista_pessoas.append(usuario)
+        pessoa.lista.lista_pessoas.append(usuario)
+        pessoa.lista.salvar_usuario()
     
         
-
     elif entrada_sistema == 2:
         print('Você acessou a lista de pessoas')
-        lista_usuarios()
-        selecionar_usuario()
-        
-
+        pessoa.lista.lista_usuarios()
+        pessoa.lista.selecionar_usuario()
         
           
     elif entrada_sistema == 3:
         print('Volte sempre!')
-        break
+
+    else:
+        print('Opção inválida!')
 
 
