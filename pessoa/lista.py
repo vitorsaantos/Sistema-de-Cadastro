@@ -5,18 +5,18 @@ lista_pessoas = []
 def lista_usuarios():
     for  contador, pessoa in enumerate(lista_pessoas):
         print(f'Pessoa {contador + 1}')
-        print(pessoa['nome'] + " "  + pessoa['sobrenome'])
-        print(pessoa['email'])
-        print(pessoa['telefone'])
-        print(pessoa['cidade'])
-        print(pessoa['bairro'])
-        print(pessoa['rua'])
-        print(pessoa['n_casa'])
+        print(f"Nome: {pessoa['nome']} {pessoa['sobrenome']}")
+        print(f"E-mail: {pessoa['email']}")
+        print(f"Telefone: {pessoa['telefone']}")
+        print(f"Cidade: {pessoa['cidade']}")
+        print(f"Bairro: {pessoa['bairro']}")
+        print(f"Rua: {pessoa['rua']}")
+        print(f"N/Casa: {pessoa['n_casa']}")
         print('----------------')
 
 
 def selecionar_usuario():
-    num_usuario = int(input('Digite o número do usuário que deseja editar (0 para voltar): '))
+    num_usuario = int(input('Digite o número do usuário que deseja editar ou ("0" para voltar): '))
     
     if num_usuario == 0:
         return 
@@ -46,15 +46,15 @@ def selecionar_usuario():
     opcoes_pessoa_selecionada = int(input('O que você deseja alterar? '))
     if opcoes_pessoa_selecionada == 1 :
         pessoa_selecionada['nome'] = input('Digite o Nome: ')
-        print("alterado com sucesso")
+        print("alterado com sucesso!!!")
 
     elif opcoes_pessoa_selecionada == 2:
         pessoa_selecionada['sobrenome'] = input('Digite o Sobrenome: ')
-        print("alterado com sucesso")
+        print("alterado com sucesso!!!")
 
     elif opcoes_pessoa_selecionada == 3:
             pessoa_selecionada['email'] = input('Digite o E-mail: ')
-            print("alterado com sucesso")
+            print("alterado com sucesso!!!")
 
     elif opcoes_pessoa_selecionada == 4:
             pessoa_selecionada['telefone'] = input('Digite o numero Telefone: ')
@@ -62,19 +62,19 @@ def selecionar_usuario():
 
     elif opcoes_pessoa_selecionada == 5:
             pessoa_selecionada['cidade'] = input('Digite a Cidade: ')
-            print("alterado com sucesso")
+            print("alterado com sucesso!!!")
 
     elif opcoes_pessoa_selecionada == 6:
             pessoa_selecionada['bairro'] = input('Digite o Bairro: ')
-            print("alterado com sucesso")
+            print("alterado com sucesso!!!")
 
     elif opcoes_pessoa_selecionada == 7:
             pessoa_selecionada['rua'] = input('Digite a Rua: ')
-            print("alterado com sucesso")
+            print("alterado com sucesso!!!")
 
     elif opcoes_pessoa_selecionada == 8:
         pessoa_selecionada['n_casa'] = input('Digite o n/casa: ')
-        print("alterado com sucesso")
+        print("alterado com sucesso!!!")
 
     else:
          print('Opção inválida!')
