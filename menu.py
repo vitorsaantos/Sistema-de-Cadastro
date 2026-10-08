@@ -8,7 +8,11 @@ usuarios = pessoa.lista.carregar_usuarios()
 pessoa.lista.lista_pessoas = usuarios
 
 while True:
-    entrada_sistema = int(input('Digite o número desejado: '))
+    try:
+        entrada_sistema = int(input('Digite o número desejado: '))
+    except ValueError:
+        print(f'Digite apenas número!')
+        continue
 
     if entrada_sistema == 1:
         print('Você acessou o cadastro de usuário.')
@@ -17,15 +21,12 @@ while True:
         if usuario is not None:
             pessoa.lista.lista_pessoas.append(usuario)
             pessoa.lista.salvar_usuario()
-
-
-        
+       
     elif entrada_sistema == 2:
         print('Você acessou a lista de usuários.')
         pessoa.lista.lista_usuarios()
         pessoa.lista.selecionar_usuario()
-        
-          
+                
     elif entrada_sistema == 3:
         print('Você saiu do sistema.')
         break

@@ -42,39 +42,93 @@ def selecionar_usuario():
     print('6 - Bairro')
     print('7 - Rua')
     print('8 - N_Casa')
+    print('digite "0" a qualquer momento para cancelar')
 
     opcoes_pessoa_selecionada = int(input('O que você deseja alterar? '))
     if opcoes_pessoa_selecionada == 1 :
-        pessoa_selecionada['nome'] = input('Digite o Nome: ')
-        print("alterado com sucesso!!!")
+        novo_nome = input('Digite o nome: ')
+        if novo_nome == '0':
+            print('Cancelado!!!')
+
+        else:
+            pessoa_selecionada['nome'] = novo_nome
+            print("alterado com sucesso!!!")
+        
 
     elif opcoes_pessoa_selecionada == 2:
-        pessoa_selecionada['sobrenome'] = input('Digite o Sobrenome: ')
-        print("alterado com sucesso!!!")
+        novo_sobrenome = input('Digite o sobrenome: ')
+
+        if novo_sobrenome == '0':
+            print('Cancelado!!!')
+
+        else:
+            pessoa_selecionada['sobrenome'] = novo_sobrenome
+            print("alterado com sucesso!!!")
+
 
     elif opcoes_pessoa_selecionada == 3:
-            pessoa_selecionada['email'] = input('Digite o E-mail: ')
+        email = input('Digite o E-mail: ')
+        if email == '0':
+            print('Cancelado!!!')
+            
+        else:
+            pessoa_selecionada['email'] = email
             print("alterado com sucesso!!!")
 
     elif opcoes_pessoa_selecionada == 4:
-            pessoa_selecionada['telefone'] = input('Digite o numero Telefone: ')
+        novo_telefone = input('Digite o numero Telefone: ')
+
+        if novo_telefone == '0':
+            print('Cancelado!!!')
+        
+        elif len(novo_telefone) != 11:
+            print('Telefone inválido!')
+        
+        elif not novo_telefone.isdigit():
+            print('Digite apenas números!!!')
+
+        else:
+            pessoa_selecionada['telefone'] = novo_telefone
             print("alterado com sucesso")
 
     elif opcoes_pessoa_selecionada == 5:
-            pessoa_selecionada['cidade'] = input('Digite a Cidade: ')
+        nova_cidade = input('Digite a Cidade: ')
+        if nova_cidade == '0':
+            print('Cancelado!!!')
+        
+        else:
+            pessoa_selecionada['cidade'] = nova_cidade
             print("alterado com sucesso!!!")
 
     elif opcoes_pessoa_selecionada == 6:
-            pessoa_selecionada['bairro'] = input('Digite o Bairro: ')
+        novo_bairro = input('Digite o Bairro: ')
+        if novo_bairro == '0':
+            print('Cancelado!!!')
+        
+        else:
+            pessoa_selecionada['bairro'] = novo_bairro
             print("alterado com sucesso!!!")
 
     elif opcoes_pessoa_selecionada == 7:
-            pessoa_selecionada['rua'] = input('Digite a Rua: ')
+        nova_rua = input('Digite a Rua: ')
+        if nova_rua == '0':
+            print('Cancelado!!!')
+        
+        else:
+            pessoa_selecionada['rua'] = nova_rua
             print("alterado com sucesso!!!")
 
     elif opcoes_pessoa_selecionada == 8:
-        pessoa_selecionada['n_casa'] = input('Digite o n/casa: ')
-        print("alterado com sucesso!!!")
+        novo_n_casa = input('Digite o n/casa: ')
+        if novo_n_casa == '0':
+            print('Cancelado!!!')
+        
+        else:
+            pessoa_selecionada['n_casa'] = novo_n_casa
+            print("alterado com sucesso!!!")
+
+    elif opcoes_pessoa_selecionada == 0:
+        print('Operação cancelada!!!')
 
     else:
          print('Opção inválida!')
@@ -95,3 +149,4 @@ def carregar_usuarios():
     with open("usuario.json", "r") as arquivo:
         dados = json.load(arquivo)
     return dados
+
