@@ -1,13 +1,13 @@
 from pessoa.cadastro import cadastro_pessoa
 import pessoa.lista
 
-print('===== SISTEMA DE CADASTRO =====  ')
-print(' 1 - Cadastrar usuário \n 2 - Listar usuário \n 3 - Sair')
-
 usuarios = pessoa.lista.carregar_usuarios()
 pessoa.lista.lista_pessoas = usuarios
 
 while True:
+    print('===== SISTEMA DE CADASTRO =====  ')
+    print(' 1 - Cadastrar usuário \n 2 - Listar usuário \n 3 - Sair')
+    
     try:
         entrada_sistema = int(input('Digite o número desejado: '))
     except ValueError:
