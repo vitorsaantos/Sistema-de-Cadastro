@@ -1,4 +1,5 @@
 import json
+from pessoa.cadastro import campo_obrigatorio
 
 lista_pessoas = []
 
@@ -49,6 +50,7 @@ def selecionar_usuario():
         opcoes_pessoa_selecionada = int(input('O que você deseja alterar? '))
         if opcoes_pessoa_selecionada == 1 :
             novo_nome = input('Digite o nome: ')
+            novo_nome = campo_obrigatorio(novo_nome)
             if novo_nome == '0':
                 print('Cancelado!!!')
 
@@ -59,7 +61,7 @@ def selecionar_usuario():
 
         elif opcoes_pessoa_selecionada == 2:
             novo_sobrenome = input('Digite o sobrenome: ')
-
+            novo_sobrenome = campo_obrigatorio(novo_sobrenome)
             if novo_sobrenome == '0':
                 print('Cancelado!!!')
 
@@ -70,6 +72,7 @@ def selecionar_usuario():
 
         elif opcoes_pessoa_selecionada == 3:
             email = input('Digite o E-mail: ')
+            email = campo_obrigatorio(email)
             if email == '0':
                 print('Cancelado!!!')
                 
@@ -95,6 +98,7 @@ def selecionar_usuario():
 
         elif opcoes_pessoa_selecionada == 5:
             nova_cidade = input('Digite a Cidade: ')
+            nova_cidade = campo_obrigatorio(nova_cidade)
             if nova_cidade == '0':
                 print('Cancelado!!!')
             
@@ -104,6 +108,7 @@ def selecionar_usuario():
 
         elif opcoes_pessoa_selecionada == 6:
             novo_bairro = input('Digite o Bairro: ')
+            novo_bairro = campo_obrigatorio(novo_bairro)
             if novo_bairro == '0':
                 print('Cancelado!!!')
             
@@ -113,6 +118,7 @@ def selecionar_usuario():
 
         elif opcoes_pessoa_selecionada == 7:
             nova_rua = input('Digite a Rua: ')
+            nova_rua = campo_obrigatorio(nova_rua)
             if nova_rua == '0':
                 print('Cancelado!!!')
             
@@ -122,6 +128,7 @@ def selecionar_usuario():
 
         elif opcoes_pessoa_selecionada == 8:
             novo_n_casa = input('Digite o n/casa: ')
+            novo_n_casa = campo_obrigatorio(novo_n_casa)
             if novo_n_casa == '0':
                 print('Cancelado!!!')
             
