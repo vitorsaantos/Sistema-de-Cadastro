@@ -6,7 +6,7 @@ pessoa.lista.lista_pessoas = usuarios
 
 while True:
     print('===== SISTEMA DE CADASTRO =====  ')
-    print(' 1 - Cadastrar usuário \n 2 - Listar usuário \n 3 - Sair')
+    print(' 1 - Cadastrar usuário \n 2 - Listar usuário \n 3 - Deletar usuário \n 4 - Sair')
     
     try:
         entrada_sistema = int(input('Digite o número desejado: '))
@@ -20,7 +20,7 @@ while True:
         usuario = cadastro_pessoa()
         if usuario is not None:
             pessoa.lista.lista_pessoas.append(usuario)
-            pessoa.lista.salvar_usuario()
+            pessoa.lista.salvar_usuario(pessoa.lista.lista_pessoas)
        
     elif entrada_sistema == 2:
         print('Você acessou a lista de usuários.')
@@ -28,6 +28,9 @@ while True:
         pessoa.lista.selecionar_usuario()
                 
     elif entrada_sistema == 3:
+        pessoa.lista.deletar_usuario()
+
+    elif entrada_sistema == 4:
         print('Você saiu do sistema.')
         break
 

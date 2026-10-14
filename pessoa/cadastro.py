@@ -1,12 +1,12 @@
 
 def cadastro_pessoa():
-    nome = input('Nome: ')
+    nome = input('Nome: ').title()
     nome = campo_obrigatorio(nome)
     resultado = cancelar_cadastro(nome)
     if resultado == None:
         return None
     
-    sobrenome = input('Sobrenome: ')
+    sobrenome = input('Sobrenome: ').title()
     sobrenome = campo_obrigatorio(sobrenome)
     resultado = cancelar_cadastro(sobrenome)
     if resultado == None:
@@ -32,20 +32,20 @@ def cadastro_pessoa():
     if resultado == None:
         return None
 
-    cidade = input('Cidade: ')
+    cidade = input('Cidade: ').title()
     cidade = campo_obrigatorio(cidade)
     resultado = cancelar_cadastro(cidade)
     if resultado == None:
         return None
 
         
-    bairro = input('Bairro: ')
+    bairro = input('Bairro: ').title()
     bairro = campo_obrigatorio(bairro)
     resultado = cancelar_cadastro(bairro)
     if resultado == None:
         return None
 
-    rua = input('Rua: ')
+    rua = input('Rua: ').title()
     rua = campo_obrigatorio(rua)
     resultado = cancelar_cadastro(rua)
     if resultado == None:
